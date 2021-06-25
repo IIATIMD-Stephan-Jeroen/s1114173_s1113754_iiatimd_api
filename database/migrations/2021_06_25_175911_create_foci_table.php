@@ -13,9 +13,10 @@ class CreateFociTable extends Migration
      */
     public function up()
     {
-        Schema::create('foci', function (Blueprint $table) {
+        Schema::create('focus', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('name');
+            $table->string('category');
         });
     }
 

@@ -18,7 +18,7 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->float('cost');
             $table->string('currency');
-            $table->string('type');
+            $table->string('type')->references(['name','name','name','name','name','name','name'])->on(['armor','weapons','consumables','tools','potions','focus','gear']);
             $table->float('weight');
         });
     }

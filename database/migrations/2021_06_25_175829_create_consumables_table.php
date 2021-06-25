@@ -15,7 +15,8 @@ class CreateConsumablesTable extends Migration
     {
         Schema::create('consumables', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('name');
+            $table->string('category')->references('name')->on('potion');
         });
     }
 

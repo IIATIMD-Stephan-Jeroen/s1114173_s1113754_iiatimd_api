@@ -13,9 +13,15 @@ class CreateArmorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('armors', function (Blueprint $table) {
+        Schema::create('armor', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('name');
+            $table->integer('armor_class');
+            $table->boolean('dex_modifier');
+            $table->integer('dex_modifier_max')->nullable();
+            $table->integer('strenght_needed')->nullable();
+            $table->boolean('stealth_disadvantage');
+            $table->string('category');
         });
     }
 

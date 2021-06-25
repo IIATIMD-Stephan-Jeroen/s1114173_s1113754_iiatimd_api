@@ -15,7 +15,8 @@ class CreatePotionsTable extends Migration
     {
         Schema::create('potions', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('name');
+            $table->string('healing');
         });
     }
 
