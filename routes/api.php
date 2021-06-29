@@ -28,3 +28,11 @@ Route::post('login', [\App\Http\Controllers\AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function() {
     Route::get('user', [\App\Http\Controllers\AuthController::class, 'user']);
 });
+Route::get('/items',[\App\Http\Controllers\ItemController::class, 'getItems']);
+Route::get('/items/weapons',[\App\Http\Controllers\ItemController::class, 'getWeapons']);
+Route::get('/items/armor',[\App\Http\Controllers\ItemController::class, 'getArmor']);
+Route::get('/items/consumables',[\App\Http\Controllers\ItemController::class, 'getConsumables']);
+Route::get('/items/focus',[\App\Http\Controllers\ItemController::class, 'getFocus']);
+Route::get('/items/potions',[\App\Http\Controllers\ItemController::class, 'getPotions']);
+Route::get('/items/tools',[\App\Http\Controllers\ItemController::class, 'getTools']);
+Route::get('/item/{itemId}',[\App\Http\Controllers\ItemController::class, 'getItemById']);
