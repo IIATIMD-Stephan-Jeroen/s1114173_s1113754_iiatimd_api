@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArmorsTable extends Migration
+class CreateFocusTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateArmorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('armor', function (Blueprint $table) {
+        Schema::create('focus', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('armor_class');
-            $table->boolean('dex_modifier');
-            $table->integer('dex_modifier_max')->nullable();
-            $table->integer('strenght_needed')->nullable();
-            $table->boolean('stealth_disadvantage');
             $table->string('category');
         });
     }
@@ -32,6 +27,6 @@ class CreateArmorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('armors');
+        Schema::dropIfExists('focus');
     }
 }

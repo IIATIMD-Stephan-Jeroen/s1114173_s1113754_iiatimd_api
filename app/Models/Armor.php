@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Armor extends Model
 {
-    use HasFactory;
+    protected $table = 'armor';
 }

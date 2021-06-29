@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    use HasFactory;
+    protected $table = 'items';
+
+    function getWeapons() {
+      return $this->hasMany('App\Weapon','type','naam');
+    }
 }
