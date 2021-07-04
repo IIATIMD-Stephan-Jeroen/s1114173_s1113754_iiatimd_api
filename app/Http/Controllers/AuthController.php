@@ -42,14 +42,12 @@ class AuthController extends Controller
 
         // return $token;
         //stores the JWT token in the http request as a cookie for security purposes
-        // $cookie = cookie('jwt', $token, 60 * 24);
+        $cookie = cookie('jwt', $token, 60 * 24);
 
         //returns response with data
         return response([
-            'message' => 'Login successfull',
-            'message' => $token
-        ]);
-        //->withCookie($cookie)
+            'message' => 'Login successfull'
+        ])->withCookie($cookie)
     }
 
     public function user() {
