@@ -36,3 +36,4 @@ Route::get('/items/focus',[\App\Http\Controllers\ItemController::class, 'getFocu
 Route::get('/items/potions',[\App\Http\Controllers\ItemController::class, 'getPotions']);
 Route::get('/items/tools',[\App\Http\Controllers\ItemController::class, 'getTools']);
 Route::get('/item/{itemId}',[\App\Http\Controllers\ItemController::class, 'getItemById']);
+Route::post('/item/insertItem/{name}/{cost}/{currency}/{weight}/{communityItem}/{damage}/{damage_type}/{prop1}/{prop2}/{prop3}/{prop4}', [\App\Http\Controllers\ItemController::class, 'insertItem']);

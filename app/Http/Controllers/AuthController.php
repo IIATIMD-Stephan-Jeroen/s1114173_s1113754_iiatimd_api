@@ -39,12 +39,17 @@ class AuthController extends Controller
         $user = Auth::user();
         //generates a JWT token using sanctum
         $token = $user->createToken('token')->plainTextToken;
+
+        $request->headers->set('Authorization', "Bearer {$token}");
+
+        // return $token;
         //stores the JWT token in the http request as a cookie for security purposes
         $cookie = cookie('jwt', $token, 60 * 24);
 
-        //returns response with cookie
+        //returns response with data
         return response([
-            'message' => 'Login successfull'
+            'message' => 'Login successfull',
+            'token' => $token
         ])->withCookie($cookie);
     }
 

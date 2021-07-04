@@ -27,6 +27,34 @@ class ItemController extends Controller
         }
         return $items;
       }
+
+
+      public function insertItem($name, $cost, $currency, $weight, $communityItem, $damage, $damage_type, $prop1, $prop2, $prop3, $prop4) {
+        $item = new Item();
+        $item->name = $name;
+        $item->cost = $cost;
+        $item->currency = $currency;
+        $item->weight = $weight;
+        $item->communityItem = $communityItem;
+
+
+        if($damage && $damage_type && $prop1 == ""){
+          $item->type = "";
+        }else {
+          $weapon = new Weapon();
+          $item->type = $name;
+          $weapon->name = $name;
+          $weapon->damage = $damage;
+          $weapon->damage_type = $damage_type;
+          $weapon->property_1 = $prop1;
+          $weapon->property_2 = $prop2;
+          $weapon->property_3 = $prop3;
+          $weapon->property_4 = $prop4;
+          $weapon->save();
+        }
+
+        $item->save();
+      }
   
       public function getItemById($itemId){
         return Item::where('id','=',$itemId)->first();
